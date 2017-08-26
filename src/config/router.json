@@ -1,0 +1,12 @@
+{
+	"page": [
+		{
+			"path":"/",
+			"name":"home",
+			"component": "../components/page/home.vue"
+		}
+	]
+}
+
+
+
