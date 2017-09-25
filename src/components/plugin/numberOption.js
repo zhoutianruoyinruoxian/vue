@@ -1,5 +1,6 @@
 /*!
  * jQuery plugin numberOption v1.0.0
+ * 输入框数字控制插件
  * author: ruoyinruoxian
  * Date: 2017-08-26
  */
