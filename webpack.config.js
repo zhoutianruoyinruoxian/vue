@@ -22,7 +22,7 @@ module.exports = {
       {
         test: /\.js$/,
         loader: 'babel-loader',
-        exclude: /node_modules/
+        exclude: /node_modules/,       //排除掉的node_modules目录下的npm包，可以使这些文件不用转es5，增加性能
       },
       {
         test: /\.(png|jpg|gif|svg)$/,
@@ -30,12 +30,24 @@ module.exports = {
         options: {
           name: '[name].[ext]?[hash]'
         }
+      },
+      {
+        test: /\.css$/,
+        use: [
+          'style-loader',
+          'css-loader'
+        ]
+      },
+      {
+        test: /\.less$/,
+        loader: 'style-loader!css-loader!less-loader',
       }
     ]
   },
   resolve: {
+    extensions: ['.js', '.vue', '.json'],//相关后缀的文件不需要添加后缀
     alias: {
-      'vue$': 'vue/dist/vue.esm.js'
+      'vue$': 'vue/dist/vue.esm.js',
     }
   },
   devServer: {
