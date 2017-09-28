@@ -13,7 +13,7 @@
 	import VueResource from 'vue-resource'
 	import $ from 'jquery'
 	// import velo from 'velocity'
-	import numberOption from '../plugin/numberOption.js'
+	import '../plugin/numberOption.js'
 
 	Vue.use(VueResource)
 	export default{
@@ -22,7 +22,7 @@
 				name: 'menumber',
 				max: 20,
 				min:0,
-				change: function(output){
+				change(output){
 					$('.num').text(output)
 				}
 			});
