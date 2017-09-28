@@ -13,8 +13,19 @@
 	import headNav from './components/page/header.vue'
 	import footNav from './components/page/footer.vue'
 	export default{
-		created(){
-
+		data () {
+			return {
+				transitionName: null,
+				transitionMode: null
+			}
+		},
+		watch:{
+			'$route'(to,from){
+				const toDepth = to.path.split('/').length;
+				const fromDepth = from.path.split('/').length; 
+				this.transitionName = toDepth < fromDepth ? 'slide-right' : 'slide-left';
+				this.transitionMode = toDepth < fromDepth ? '' : 'out-in';
+			}
 		},
 		components:{
 			headNav,
@@ -27,8 +38,17 @@
 	.route-enter-active,.route-leave-active{transition: opacity 0.3s;}
 	.route-enter,.route-leave-to{opacity: 0;}
 	.route-enter-to,.route-leave{opacity: 1;}
+	.slide-right-leave-active{transition: left 0.5s;position: absolute;background-color: #eee;width: 100vw;}
+	.slide-right-leave-to{left: 100vw;}
+	.slide-right-leave{left: 0vw;}
+	.slide-left-enter-active{transition: left 0.5s;position: absolute;background-color: #eee;width: 100vw;}
+	.slide-left-enter{left: 100vw;}
+	.slide-left-enter-to{left: 0vw;}
+	.slide-left-leave-active{transition: left 0.45s;position: absolute;}
+	.slide-left-leave{opacity: 1;}
+	.slide-left-leave-to{opacity: 1;}
 	#main_content{
-		min-height: 500px;
+		min-height: calc(~'100vh - 4rem');
 		background-color: #eee;
 	}
 </style>
