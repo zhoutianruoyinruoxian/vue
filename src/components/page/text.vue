@@ -1,31 +1,29 @@
 <template>
-	<div class="list">
+	<div class="test">
 		<h1 class="ani" @click="click($event)">home</h1>
 		<router-link :to="{path:'/'}">首页</router-link>
 		<router-link :to="{path:'/list'}">list</router-link>
 		<router-link :to="{path:'/numberOption'}">输入框数值操作</router-link>
+
+		<div>
+			
+		</div>
 	</div>
 </template>
 <script>
 	import Vue from 'vue'
-	import VueResource from 'vue-resource'
-	import $ from 'jquery'
-	// import velo from 'velocity'
-
-	Vue.use(VueResource)
 	export default{
 		mounted(){
-			// this.$http({
-			// 	method:'GET',
-			// 	url:'http://127.0.0.1:8085/server/server.json',
-			// 	data:{},
-			// 	type:"JSON",
-			// 	headers: {"X-Requested-With": "XMLHttpRequest"},
-			// 	emulateJSON: true
-			// })
-			// .then(function(data){//es5写法
-			// 	console.log(data)
-			// })
+			function then(){
+				console.log('continue')
+			}
+			(function(){
+				console.log('strat')
+				then();
+
+				console.log('end')
+			})()
+			console.log(222)
 		},
 		methods:{
 			// click:function(e){

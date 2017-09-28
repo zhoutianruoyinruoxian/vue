@@ -1,5 +1,6 @@
 /*!
  * jQuery plugin numberOption v1.0.0
+ * 输入框数字控制插件
  * author: ruoyinruoxian
  * Date: 2017-08-26
  */
@@ -16,10 +17,10 @@ import jQuery from 'jquery';
 		name: 'number',//获取数据的name属性
 		max: 100,//最大数值
 		min: 1,//最小数值
-		change:function(){},//等同于下面3个函数
-		inputChange: function(){},
-		lessClick: function(){},
-		plusClick: function(){}
+		change(){},//等同于下面3个函数
+		inputChange(){},
+		lessClick(){},
+		plusClick(){}
 	};
 	
 	function number_option(el,settings){//主函数体
