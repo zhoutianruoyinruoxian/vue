@@ -1,11 +1,11 @@
 <template>
 	<div class="main_header">
 		<mt-header title="我的vue" class="header_content">
-			<mt-button icon="more" slot="right" @click.stop="navShow()">
+			<mt-button icon="more" slot="right" @click.stop="navShow">
 			</mt-button>
 		</mt-header>
-		<ul class="right">
-			<li v-for="(item,index) in nav" @click.stop="navShow()">
+		<ul class="right" ref="right">
+			<li v-for="(item,index) in nav" @click.stop="navShow">
 				<router-link :to="{path:item.path}">{{item.name}}</router-link>
 			</li>
 		</ul>
@@ -41,7 +41,7 @@
 		},
 		methods:{
 			navShow(){
-				let toggleClass = document.getElementsByClassName('right')[0];
+				let toggleClass = this.$refs.right;
 				toggleClass.className = this.navToggle?"right active":'right';
 				this.navToggle = !this.navToggle;
 			}

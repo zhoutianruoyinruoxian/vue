@@ -2,6 +2,7 @@ var path = require('path');
 var webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 module.exports = {
 	entry: './src/main.js',
@@ -39,7 +40,10 @@ module.exports = {
 		new CleanWebpackPlugin(['dist']),//用于每次构建钱清理/dist文件
 		new HtmlWebpackPlugin({
 			title: '我的VUE'
-		})
+		}),
+		new ExtractTextPlugin({//分离css文件
+	      	filename: '/static/css/[name].css'
+	    }),
 	],
 	resolve: {//模块路径
 		extensions:['.js','.jsx','.vue','.json'],//此选项告诉解析器在解析中能够接受哪些扩展名
