@@ -1,31 +1,32 @@
 <template>
-	<div class="list">
-		<h1 class="ani" @click="click($event)">home</h1>
+	<div class="home">
+		<h1 class="ani">首页</h1>
 		<router-link :to="{path:'/'}">首页</router-link>
-		<router-link :to="{path:'/list'}">list</router-link>
 		<router-link :to="{path:'/numberOption'}">输入框数值操作</router-link>
+		<div id="number" style="width: 120px;height: 30px;">
+		</div>
+		<span class="num"></span>
 	</div>
 </template>
 <script>
-	import Vue from 'vue'
-	import VueResource from 'vue-resource'
-	import $ from 'jquery'
-	// import velo from 'velocity'
 
-	Vue.use(VueResource)
 	export default{
 		mounted(){
-			// this.$http({
-			// 	method:'GET',
-			// 	url:'http://127.0.0.1:8085/server/server.json',
-			// 	data:{},
-			// 	type:"JSON",
-			// 	headers: {"X-Requested-With": "XMLHttpRequest"},
-			// 	emulateJSON: true
-			// })
-			// .then(function(data){//es5写法
-			// 	console.log(data)
-			// })
+			
+			this.$ajax.get('http://127.0.0.1:8085/server/server')
+			.then(data=>{//es5写法
+				console.log(data)
+			})
+			.catch(error=>{
+				console.log(error)
+			})
+			this.$ajax.get('http://127.0.0.1:8085/server/demo')
+			.then(function(data){//es5写法
+				console.log(data)
+			})
+			.catch(error=>{
+				console.log(error)
+			})
 		},
 		methods:{
 			// click:function(e){

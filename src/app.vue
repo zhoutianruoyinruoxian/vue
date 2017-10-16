@@ -47,8 +47,11 @@
 	.slide-left-leave-active{transition: left 0.45s;position: absolute;}
 	.slide-left-leave{opacity: 1;}
 	.slide-left-leave-to{opacity: 1;}
+	#app{
+		height: 100%;
+	}
 	#main_content{
-		min-height: calc(~'100vh - 4rem');
+		min-height: calc(~'100% - 4rem');
 		background-color: #eee;
 	}
 </style>

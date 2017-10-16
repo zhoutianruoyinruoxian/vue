@@ -59,22 +59,23 @@
 			text-shadow: 0 0 1px rgba(0,0,0,0.3);
 		}
 		ul.right{
-			max-width: 1440px;
 			font-size: 0.8rem;
 			position: absolute;
 			right: 0;
 			top: 2rem;
-			z-index: 1000;
+			overflow: hidden;
+			transition:z-index 0.3s;
+			z-index: -1;
 			li{
+				transition: transform 0.15s,opacity 0.30s;
+				transform: translate(0.5rem,-0.5rem);
+				opacity: 0;
 				a{
 					display: block;
 					color: #fff;
-					opacity: 0;
 					width: 4rem;
 					line-height: 1.5rem;
 					font-size: 0.7rem;
-					transition: transform 0.15s,opacity 0.30s;
-					transform: translate(0.5rem,-0.5rem);
 					text-align: center;
 					background-color: #74A8FF;
 				}
@@ -82,18 +83,16 @@
 			.loop(@counter) when (@counter <= @navLength) {
 			  .loop((@counter + 1));
 			  li:nth-child(@{counter}) {
-			  	a{
 				  	transition-delay: (0.075s * @counter);
-			  	}
 				}
 			}
 			.loop(1);
 			&.active{
+				z-index: 100;
+				transition-delay: (0.075s * @navLength);
 				li{
-					a{
-						transform: translate(0,0);
-						opacity: 1;
-					}
+					transform: translate(0,0);
+					opacity: 1;
 				}
 			}
 		}
