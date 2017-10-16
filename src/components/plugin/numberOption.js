@@ -35,7 +35,7 @@ import jQuery from 'jquery';
 				#numberOption a{width: 25%;height: 100%;float: left;font-size: 20px;color: #666;font-style: normal;text-align: center;line-height: 125%;text-decoration: none;}
 				#numberOption a:hover{color: #f60;}
 				#numberOption a{width: 25%;height: 100%;float: left;}
-				#numberOption input{width: 50%;height: 100%;line-height: 100%;text-align: center;border: 0;border-style: solid;border-color: #999;border-left-width: 1px ;border-right-width: 1px;float: left;outline: none;color: #333;padding: 0 5%;}
+				#numberOption input{width: 50%;height: 100%;line-height: 100%;text-align: center;border: 0;border-style: solid;border-color: #999;border-left-width: 1px ;border-right-width: 1px;float: left;outline: none;color: #333;padding: 0 5%;border-radius:0;}
 			</style>
 		`;
 		el.empty().append(content);

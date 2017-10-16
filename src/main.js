@@ -2,6 +2,9 @@ import Vue from 'vue'
 import App from './app.vue'
 import router from './config/router.js'
 import $ from 'jquery'
+import axios from 'axios'
+
+Vue.prototype.$ajax = axios
 
 import './components/static/css/reset.css'
 import './components/static/css/base.css'
