@@ -1,5 +1,5 @@
-var path = require('path');
-var webpack = require('webpack');
+const path = require('path');
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
@@ -57,6 +57,7 @@ module.exports = {
 			// necessary to consistently work with multiple chunks via CommonsChunkPlugin
 			chunksSortMode: 'dependency'
 		}),
+    	new webpack.HotModuleReplacementPlugin()//模块热替换（运行时更新各种模块，而无需进行完全刷新）
 	],
 	resolve: {//模块路径
 		extensions:['.js','.jsx','.vue','.json'],//此选项告诉解析器在解析中能够接受哪些扩展名
@@ -67,7 +68,8 @@ module.exports = {
 	devServer: {
 		historyApiFallback: true,
 		noInfo: true,
-		port:8080
+		port:8080,
+		hot: true//模块热替换
 	},
 	performance: {
 		hints: false

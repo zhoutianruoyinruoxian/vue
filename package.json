@@ -5,8 +5,9 @@
   "author": "zhoutian",
   "private": true,
   "scripts": {
-    "dev": "cross-env NODE_ENV=development webpack-dev-server --host 0.0.0.0 --open --hot",
-    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
+    "start": "cross-env NODE_ENV=development webpack-dev-server --host 0.0.0.0 --open --hot --config bulid/webpack.dev.js",
+    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules --config bulid/webpack.prod.js",
+    "watch": "webpack --watch"
   },
   "dependencies": {
     "axios": "^0.16.2",
@@ -31,6 +32,7 @@
     "vue-template-compiler": "^2.3.3",
     "vuex": "^2.3.1",
     "webpack": "^2.6.1",
-    "webpack-dev-server": "^2.4.5"
+    "webpack-dev-server": "^2.4.5",
+    "webpack-merge": "^4.1.0"
   }
 }
