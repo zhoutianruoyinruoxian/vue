@@ -22,7 +22,7 @@ module.exports = {
       {
         test: /\.js$/,
         loader: 'babel-loader',
-        exclude: /node_modules/,       //排除掉的node_modules目录下的npm包，可以使这些文件不用转es5，增加性能
+        exclude: /node_modules/,       //排除掉node_modules目录下的npm包，可以使这些文件不用转es5，增加性能
       },
       {
         test: /\.(png|jpg|gif|svg)$/,
