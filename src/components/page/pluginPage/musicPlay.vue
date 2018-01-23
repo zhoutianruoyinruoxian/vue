@@ -7,7 +7,6 @@
 	import Vue from 'vue'
 	import $ from 'jquery'
 	import music from '../plugin/musicPlay'
-	// var music = require('../plugin/musicPlay')
 
 	export default{
 		mounted(){
@@ -19,9 +18,6 @@
 			});
 		},
 		methods:{
-			// click:function(e){
-			// 	Velocity(e.target,{"margin-left": "200px"}, 450);
-			// }
 		}
 	}
 </script>

@@ -39,6 +39,11 @@ const router = new VueRouter({
 			component: text
 		},
 		{
+			path:"/test",
+			name:"test",
+			component: test
+		},
+		{
 			path:"/numberOption",
 			name:"numberOption",
 			component: numberOption

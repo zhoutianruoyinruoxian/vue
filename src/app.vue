@@ -12,6 +12,9 @@
 <script>
 	import headNav from './components/page/header.vue'
 	import footNav from './components/page/footer.vue'
+	
+	import Vconsole from 'vconsole'
+	const vconsole = new Vconsole()
 	export default{
 		data () {
 			return {
