@@ -8,6 +8,7 @@ import numberOption from '../components/page/pluginPage/numberOption.vue'
 import routerJson from './router.json'
 import three from '../components/page/pluginPage/three/threedemo.vue'
 import vr from '../components/page/pluginPage/three/vr.vue'
+import websocket from '../components/page/pluginPage/websocket/server.vue'
 
 Vue.use(VueRouter)
 
@@ -67,6 +68,11 @@ const router = new VueRouter({
 					path:"vr",
 					name:"vr",
 					component: vr,
+				},
+				{
+					path:"websocket",
+					name:"websocket",
+					component: websocket,
 				},
 			]
 		}

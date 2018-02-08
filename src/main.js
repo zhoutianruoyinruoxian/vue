@@ -3,6 +3,7 @@ import App from './app.vue'
 import router from './config/router.js'
 import $ from 'jquery'
 import axios from 'axios'
+import moment from 'moment'
 
 Vue.prototype.$ajax = axios
 

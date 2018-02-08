@@ -8,7 +8,7 @@
 			</ul>
 		</div>
 		<div>
-			<h1>插件</h1>
+			<!-- <h1>插件</h1> -->
 			<transition mode="out-in" name="route">
 				<router-view></router-view>
 			</transition>
