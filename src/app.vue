@@ -51,7 +51,7 @@
 	.slide-left-leave{opacity: 1;}
 	.slide-left-leave-to{opacity: 1;}
 	#app{
-		height: 100%;
+		/*height: 100%;*/
 	}
 	#main_content{
 		min-height: calc(~'100% - 4rem');

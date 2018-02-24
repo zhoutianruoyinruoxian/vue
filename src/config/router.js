@@ -8,6 +8,7 @@ import numberOption from '../components/page/pluginPage/numberOption.vue'
 import routerJson from './router.json'
 import three from '../components/page/pluginPage/three/threedemo.vue'
 import vr from '../components/page/pluginPage/three/vr.vue'
+import prototypeInheritance from '../components/page/article/prototypeInheritance/prototypeInheritance.vue'
 
 Vue.use(VueRouter)
 
@@ -47,6 +48,18 @@ const router = new VueRouter({
 			path:"/numberOption",
 			name:"numberOption",
 			component: numberOption
+		},
+		{
+			path:"/article",
+			name:"article",
+			component: prototypeInheritance,
+			children:[
+				{
+					path:'prototypeInheritance',
+					name:"prototypeInheritance",
+					component: prototypeInheritance,
+				},
+			]
 		},
 		{
 			path:"/pluginPage",

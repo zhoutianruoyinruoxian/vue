@@ -15,6 +15,7 @@
 	export default {
 		data(){
 			return{
+				title:33,
 				navToggle:true,
 				nav:[
 					{
@@ -57,6 +58,9 @@
 			background-color: #74A8FF;
 			color: #fff;
 			text-shadow: 0 0 1px rgba(0,0,0,0.3);
+			h1{
+				color: inherit;
+			}
 		}
 		ul.right{
 			font-size: 0.8rem;

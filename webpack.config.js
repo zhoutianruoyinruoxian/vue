@@ -1,5 +1,6 @@
 var path = require('path')
 var webpack = require('webpack')
+var lessConfig = require('./src/config/less/theme.json')
 
 module.exports = {
   entry: './src/main.js',
@@ -47,6 +48,10 @@ module.exports = {
       {
         test: /\.less$/,
         loader: 'style-loader!css-loader!less-loader',
+        options: {
+            globalVars: lessConfig
+            
+        }
       }
     ]
   },
