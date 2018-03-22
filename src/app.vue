@@ -51,10 +51,10 @@
 	.slide-left-leave{opacity: 1;}
 	.slide-left-leave-to{opacity: 1;}
 	#app{
-		/*height: 100%;*/
+		/*min-height: 100vh;*/
 	}
 	#main_content{
-		min-height: calc(~'100% - 4rem');
+		min-height: calc(~'100vh - 4rem');
 		background-color: #eee;
 	}
 </style>

@@ -21,14 +21,18 @@
 				<p>首先我们创建一个People主函数，然后在构造函数里面定义sleep方法和eat方法。然后分别定义男人（Man）、女人（Woman）、小孩（Child）三个构造函数，接下去再分别加入他们对应的私有方法。只要3个构造函数继承主函数People就又能直接集成到sleep方法和eat方法。</p>
 				<p>通俗的来讲就是把他们共有的方法放入主函数，再自己分别构建私有方法，这样既不会像方案1那样导致公共方法重复定义，影响js美观和性能；也不会像方案2那样导致私有方法变成公共方法（比如Man函数可以直接调用cook方法）。</p>
 				<p>全部代码如下图：</p>
-				<img src="./img/code3.jpg">
+				<!-- <img src="./img/code3.jpg"> -->
 			</section>
 		</article>
 	</div>
 </template>
 <script>
 
-	export default {
+	export default{
+		mounted(){
+		},
+		methods:{
+		}
 	}
 </script>
 <style lang='less' scoped>
