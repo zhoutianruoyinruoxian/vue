@@ -9,14 +9,16 @@
 	</div>
 </template>
 <script>
-	import Vue from 'vue'
-	import VueResource from 'vue-resource'
 	import $ from 'jquery'
 	// import velo from 'velocity'
 	import '../plugin/numberOption.js'
 
-	Vue.use(VueResource)
 	export default{
+		data(){
+			return{
+				
+			}
+		}
 		mounted(){
 			$('#number').numberOption({
 				name: 'menumber',
@@ -26,17 +28,6 @@
 					$('.num').text(output)
 				}
 			});
-			// this.$http({
-			// 	method:'GET',
-			// 	url:'http://127.0.0.1:8085/server/server.json',
-			// 	data:{},
-			// 	type:"JSON",
-			// 	headers: {"X-Requested-With": "XMLHttpRequest"},
-			// 	emulateJSON: true
-			// })
-			// .then(function(data){//es5写法
-			// 	console.log(data)
-			// })
 		},
 		methods:{
 			// click:function(e){

@@ -1,10 +1,10 @@
 <template>
 	<div class="main_header">
-		<mt-header title="我的vue" class="header_content">
+		<mt-header :title="title" class="header_content" id='main_title'>
 			<mt-button icon="more" slot="right" @click.stop="navShow">
 			</mt-button>
 		</mt-header>
-		<ul class="right" ref="right">
+		<ul class="right" ref="right" >
 			<li v-for="(item,index) in nav" @click.stop="navShow">
 				<router-link :to="{path:item.path}">{{item.name}}</router-link>
 			</li>
@@ -15,7 +15,7 @@
 	export default {
 		data(){
 			return{
-				title:33,
+				title:this.$route.meta.title||'undefined',
 				navToggle:true,
 				nav:[
 					{
@@ -34,10 +34,15 @@
 			}
 		},
 		mounted(){
-			var self = this;
+			const self = this;
 			document.onclick = ()=>{
 				self.navToggle = false
 				self.navShow()
+			}
+		},
+		watch:{
+			'$route'(to,from){
+				this.title = to.meta.title||'undefined';
 			}
 		},
 		methods:{
