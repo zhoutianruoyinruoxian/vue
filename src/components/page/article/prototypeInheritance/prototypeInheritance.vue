@@ -28,7 +28,11 @@
 </template>
 <script>
 
-	export default {
+	export default{
+		mounted(){
+		},
+		methods:{
+		}
 	}
 </script>
 <style lang='less' scoped>
