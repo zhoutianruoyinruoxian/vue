@@ -8,11 +8,8 @@ import numberOption from '../components/page/pluginPage/numberOption.vue'
 import routerJson from './router.json'
 import three from '../components/page/pluginPage/three/threedemo.vue'
 import vr from '../components/page/pluginPage/three/vr.vue'
-<<<<<<< .merge_file_a20148
 import prototypeInheritance from '../components/page/article/prototypeInheritance/prototypeInheritance.vue'
-=======
 import websocket from '../components/page/pluginPage/websocket/server.vue'
->>>>>>> .merge_file_a17260
 
 Vue.use(VueRouter)
 
@@ -51,6 +48,7 @@ const router = new VueRouter({
 		{
 			path:"/numberOption",
 			name:"numberOption",
+			meta: { title:'数字操作' },
 			component: numberOption
 		},
 		{
@@ -94,6 +92,8 @@ const router = new VueRouter({
 		}
 	]
 })
+
+
 
 // router.beforeEach((to, from, next) => {
 // 	console.log(to.path)

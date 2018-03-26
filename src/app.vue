@@ -14,7 +14,7 @@
 	import footNav from './components/page/footer.vue'
 	
 	import Vconsole from 'vconsole'
-	const vconsole = new Vconsole()
+	// const vconsole = new Vconsole()
 	export default{
 		data () {
 			return {
