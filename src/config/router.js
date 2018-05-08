@@ -8,6 +8,8 @@ import numberOption from '../components/page/pluginPage/numberOption.vue'
 import routerJson from './router.json'
 import three from '../components/page/pluginPage/three/threedemo.vue'
 import vr from '../components/page/pluginPage/three/vr.vue'
+import fileUpload from '../components/page/fileUpload.vue'
+import list from '../components/page/list.vue'
 
 import prototypeInheritance from '../components/page/article/prototypeInheritance/prototypeInheritance.vue'
 import clickDelay from '../components/page/article/clickDelay/clickDelay.vue'
@@ -53,6 +55,16 @@ const router = new VueRouter({
 			path:"/numberOption",
 			name:"numberOption",
 			component: numberOption
+		},
+		{
+			path:"/fileUpload",
+			name:"fileUpload",
+			component: fileUpload
+		},
+		{
+			path:"/list",
+			name:"list",
+			component: list
 		},
 		// {
 		// 	path:"/article",

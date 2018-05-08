@@ -1,6 +1,6 @@
 <template>
 	<div class="footer">
-		<p class="copyright">这是我的第一个vue应用</p>
+		<p class="copyright">技术支持：周天</p>
 	</div>
 </template>
 <script>

@@ -1,18 +1,17 @@
-import Vue from 'vue'
-import App from './app.vue'
-import router from './config/router.js'
-import $ from 'jquery'
-import axios from 'axios'
-import moment from 'moment'
-
-Vue.prototype.$ajax = axios
-
-import './components/static/css/reset.css'
-import './components/static/css/base.css'
+import Vue from 'vue';
+import $ from 'jquery';
+import moment from 'moment';
 //mint-ui 样式
 import Mint from 'mint-ui';
-import './components/static/css/mint-ui-style.css'
+import App from './app.vue';
+import router from './config/router.js';
+import axios from './config/axiosConfig';
+
+import './components/static/css/reset.css';
+import './components/static/css/base.css';
+import './components/static/css/mint-ui-style.css';
 Vue.use(Mint);
+Vue.prototype.$ajax = axios;
 
 
 
