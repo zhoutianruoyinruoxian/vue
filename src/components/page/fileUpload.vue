@@ -14,8 +14,7 @@
     },
     methods: {
       submit() {
-        console.log(this.photo)
-        this.$ajax.post('/photo', { photo:this.photo })
+        this.$ajax.post('http://47.98.117.109/server/photo', { photo:this.photo })
           .then((data) => {
             console.log(data)
           })
