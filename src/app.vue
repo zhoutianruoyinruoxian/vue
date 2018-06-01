@@ -1,6 +1,6 @@
 <template>
 	<div id="app" class="app">
-		<head-nav></head-nav>
+		<head-nav :titles="title" sll="这是静态的属性"></head-nav>
 		<div id="main_content">
 			<transition mode="out-in" name="route">
 				<router-view></router-view>
@@ -10,14 +10,15 @@
 	</div>
 </template>
 <script>
+	import Vconsole from 'vconsole'
+
 	import headNav from './components/page/header.vue'
 	import footNav from './components/page/footer.vue'
-	
-	import Vconsole from 'vconsole'
 	// const vconsole = new Vconsole()
 	export default{
 		data () {
 			return {
+				title:'这是动态的属性',
 				transitionName: null,
 				transitionMode: null
 			}

@@ -14,7 +14,14 @@
     },
     methods: {
       submit() {
-        this.$ajax.post('http://47.98.117.109/server/photo', { photo:this.photo })
+        this.$ajax({
+            url: 'http://47.98.117.109/server/photo',
+            method:'POST',
+            data: {
+              photo:this.photo
+            },
+            timeout: 60000,
+          })
           .then((data) => {
             console.log(data)
           })
