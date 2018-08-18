@@ -13,7 +13,11 @@
 </template>
 <script>
 	export default {
-		data(){
+		props:[
+			'titles',
+			'sll'
+		],
+		data() {
 			return{
 				title:this.$route.meta.title||'undefined',
 				navToggle:true,
@@ -33,20 +37,21 @@
 				]
 			}
 		},
-		mounted(){
+		mounted() {
 			const self = this;
-			document.onclick = ()=>{
+			document.onclick = () => {
 				self.navToggle = false
 				self.navShow()
 			}
+			console.log(`这个是父组件传过来的参数：${this.titles},${this.sll}`)
 		},
 		watch:{
-			'$route'(to,from){
+			'$route'(to,from) {
 				this.title = to.meta.title||'undefined';
 			}
 		},
 		methods:{
-			navShow(){
+			navShow() {
 				let toggleClass = this.$refs.right;
 				toggleClass.className = this.navToggle?"right active":'right';
 				this.navToggle = !this.navToggle;

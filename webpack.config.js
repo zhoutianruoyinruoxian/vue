@@ -64,12 +64,12 @@ module.exports = {
   devServer: {
     historyApiFallback: true,
     noInfo: true,
-    port:8080
+    port:9999
   },
   performance: {
     hints: false
   },
-  devtool: 'inline-source-map'
+  devtool: 'eval-source-map'
 }
 
 if (process.env.NODE_ENV === 'production') {

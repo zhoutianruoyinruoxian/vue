@@ -7,8 +7,8 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin')
 module.exports = {
 	entry: './src/main.js',
 	output: {
-		path: path.resolve(__dirname, './dist'),
-		publicPath: '/dist/',
+		path: path.resolve(__dirname, './dist'),//文件将输出到指定目录下
+		publicPath: '/dist/',//静态资源输出位置
 		filename: '[name].js'
 	},
 	module: {
@@ -74,7 +74,7 @@ module.exports = {
 	performance: {
 		hints: false
 	},
-	devtool: '#eval-source-map'
+	devtool: 'eval-source-map'
 }
 
 if (process.env.NODE_ENV === 'production') {

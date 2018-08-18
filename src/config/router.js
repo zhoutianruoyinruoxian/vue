@@ -8,6 +8,8 @@ import numberOption from '../components/page/pluginPage/numberOption.vue'
 import routerJson from './router.json'
 import three from '../components/page/pluginPage/three/threedemo.vue'
 import vr from '../components/page/pluginPage/three/vr.vue'
+import fileUpload from '../components/page/fileUpload.vue'
+import list from '../components/page/list.vue'
 
 import prototypeInheritance from '../components/page/article/prototypeInheritance/prototypeInheritance.vue'
 import clickDelay from '../components/page/article/clickDelay/clickDelay.vue'
@@ -35,65 +37,78 @@ const router = new VueRouter({
 	routes: 
 	[
 		{
-			path:"/",
-			name:"home",
-			component: home
+			path: "/",
+			name: "home",
+			component: home,
+			meta: {
+				title: '首页',
+			}
 		},
 		{
-			path:"/text",
-			name:"text",
+			path: "/text",
+			name: "text",
 			component: text
 		},
 		{
-			path:"/test",
-			name:"test",
+			path: "/test",
+			name: "test",
 			component: test
 		},
 		{
-			path:"/numberOption",
-			name:"numberOption",
+			path: "/numberOption",
+			name: "numberOption",
 			component: numberOption
 		},
+		{
+			path: "/fileUpload",
+			name: "fileUpload",
+			component: fileUpload
+		},
+		{
+			path: "/list",
+			name: "list",
+			component: list
+		},
 		// {
-		// 	path:"/article",
-		// 	name:"article",
+		// 	path: "/article",
+		// 	name: "article",
 		// 	component: prototypeInheritance,
 		// 	children:[
 		// 		{
 		// 			path:'prototypeInheritance',
-		// 			name:"prototypeInheritance",
+		// 			name: "prototypeInheritance",
 		// 			component: prototypeInheritance,
 		// 		},
 		// 	]
 		// },
 		{
-			path:"/article",
-			name:"article",
+			path: "/article",
+			name: "article",
 			component: clickDelay,
 		},
 		{
-			path:"/pluginPage",
-			name:"plugin",
+			path: "/pluginPage",
+			name: "plugin",
 			component: plugin,
 			children:[
 				{
-					path:"numberOption",
-					name:"numberOption",
+					path: "numberOption",
+					name: "numberOption",
 					component: numberOption,
 				},
 				{
-					path:"three",
-					name:"three",
+					path: "three",
+					name: "three",
 					component: three,
 				},
 				{
-					path:"vr",
-					name:"vr",
+					path: "vr",
+					name: "vr",
 					component: vr,
 				},
 				{
-					path:"websocket",
-					name:"websocket",
+					path: "websocket",
+					name: "websocket",
 					component: websocket,
 				},
 			]
@@ -120,8 +135,8 @@ const router = new VueRouter({
 // 	_path.forEach((o)=>{
 // 		if(o==''){
 // 			let target = {
-// 				path:"/",
-// 				name:"home",
+// 				path: "/",
+// 				name: "home",
 // 				component: require('../components/page/home.vue'),
 // 			}
 // 			return;
