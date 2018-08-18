@@ -97,6 +97,11 @@ const router = new VueRouter({
 					component: websocket,
 				},
 			]
+		},
+		{
+			path:"/notes",
+			name:"notes",
+			component: plugin,
 		}
 	]
 })

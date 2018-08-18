@@ -1,0 +1,42 @@
+<template>
+	<div class="deduplication">
+		<input type="text" placeholder="请输入一组数字" name="">
+		<div>重复最多的数字为：{{mostNum}}</div>
+		<div>重复最多：{{most}}次</div>
+	</div>
+</template>
+<script>
+
+	export default{
+		data(){
+			return{
+				mostNum: [],
+				most: '',
+			}
+		},
+		mounted(){
+		},
+		methods:{
+			deduplication(){
+				console.log(this)
+				let self=this,most=0,mostNum=[],
+				arr=this.value.split(''),
+				max = Math.max(...arr),
+				b = new Array(++max).fill(0);
+				arr.forEach(e=>{
+					b[e]++;
+				});
+				most = Math.max(...b);
+				let check = new RegExp(most,'g');
+				while(most_o = check.exec(b.join(''))){
+					mostNum.push(most_o.index);
+				};
+				self.mostNum = mostNum;
+				self.most = most;
+			}
+		}
+	}
+</script>
+<style type="text/css">
+
+</style>
