@@ -1,6 +1,6 @@
-var path = require('path')
-var webpack = require('webpack')
-var lessConfig = require('./src/config/less/theme.json')
+const path = require('path');
+const webpack = require('webpack');
+const lessConfig = require('./src/config/less/theme.json');
 
 module.exports = {
   entry: './src/main.js',
@@ -35,7 +35,7 @@ module.exports = {
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/,
         use: [
-         'file-loader'
+          'file-loader'
         ]
       },
       {
@@ -49,8 +49,8 @@ module.exports = {
         test: /\.less$/,
         loader: 'style-loader!css-loader!less-loader',
         options: {
-            globalVars: lessConfig
-            
+          globalVars: lessConfig
+
         }
       }
     ]
@@ -64,7 +64,7 @@ module.exports = {
   devServer: {
     historyApiFallback: true,
     noInfo: true,
-    port:9999
+    port: 9999
   },
   performance: {
     hints: false

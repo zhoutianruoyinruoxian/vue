@@ -8,19 +8,19 @@
 
 const doc = document;
 let defaults = {
-	el: doc.querySelector('body'),//放入的位置
-	icon:'',//图标url
-	music:'',//音频url
-	speed:3,//动画速度
+  el: doc.querySelector('body'), //放入的位置
+  icon: '', //图标url
+  music: '', //音频url
+  speed: 3, //动画速度
 };
 
-function music(param){
+function music(param) {
 
-	"use strict";
+  'use strict';
 
-	let obj = Object.assign({}, defaults, param);
+  let obj = Object.assign({}, defaults, param);
 
-	let content=`
+  let content = `
 		<div class="musicSection">
 			<div class="musicSection_icon_back">
 		  		<img class="musicSection_icon" src="${obj.icon}">
@@ -39,30 +39,30 @@ function music(param){
 		</style>
 	`;
 
-	obj.el.innerHTML = content;
+  obj.el.innerHTML = content;
 
-	let isPlaying = false;
-	var container = doc.querySelector('.musicSection_icon_back');
-	var image = container.querySelector('.musicSection_icon');
+  let isPlaying = false;
+  const container = doc.querySelector('.musicSection_icon_back');
+  const image = container.querySelector('.musicSection_icon');
 
-	image.addEventListener('click', ()=> {
-	  	isPlaying?_music(false):_music(true);
-	});
+  image.addEventListener('click', () => {
+    isPlaying ? _music(false) : _music(true);
+  });
 
-	function _music(o){
-		if(o){
-		  	isPlaying = true;
-		  	image.classList.add('animate');
-			doc.getElementById("music").play();
-		}else{
-			doc.getElementById("music").pause();
-		  	isPlaying = false;
-		  	var iTransform = getComputedStyle(image).transform;
-		  	var cTransform = getComputedStyle(container).transform;
-		  	container.style.transform = cTransform === 'none' ? iTransform : cTransform.concat(iTransform);
-		  	image.classList.remove('animate');
-		}
-	}
+  function _music(o) {
+    if (o) {
+      isPlaying = true;
+      image.classList.add('animate');
+      doc.getElementById('music').play();
+    } else {
+      doc.getElementById('music').pause();
+      isPlaying = false;
+      const iTransform = getComputedStyle(image).transform;
+      const cTransform = getComputedStyle(container).transform;
+      container.style.transform = cTransform === 'none' ? iTransform : cTransform.concat(iTransform);
+      image.classList.remove('animate');
+    }
+  }
 }
 
 

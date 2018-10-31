@@ -37,7 +37,7 @@ module.exports = {
 		]
 	},
 	plugins: [
-		new CleanWebpackPlugin(['dist']),//用于每次构建钱清理/dist文件
+		new CleanWebpackPlugin(['dist']),//用于每次构建前清理/dist文件
 		new ExtractTextPlugin({//分离css文件
 			filename: '/static/css/[name].css'
 		}),

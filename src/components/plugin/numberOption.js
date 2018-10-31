@@ -9,22 +9,22 @@ import jQuery from 'jquery';
 
 
 
-(function($){
+(function ($) {
 
-	"use strict";
+  'use strict';
 
-	var defaults = {
-		name: 'number',//获取数据的name属性
-		max: 100,//最大数值
-		min: 1,//最小数值
-		change(){},//等同于下面3个函数
-		inputChange(){},
-		lessClick(){},
-		plusClick(){}
-	};
-	
-	function number_option(el,settings){//主函数体
-		var content = `
+  const defaults = {
+    name: 'number', //获取数据的name属性
+    max: 100, //最大数值
+    min: 1, //最小数值
+    change() { }, //等同于下面3个函数
+    inputChange() { },
+    lessClick() { },
+    plusClick() { },
+  };
+
+  const number_option = (el, settings) => {//主函数体
+    const content = `
 			<div id="numberOption">
 				<a class="less" href="javascript:;">－</a>
 				<input type="text" name="${settings.name}" value="${settings.min}">
@@ -38,50 +38,51 @@ import jQuery from 'jquery';
 				#numberOption input{width: 50%;height: 100%;line-height: 100%;text-align: center;border: 0;border-style: solid;border-color: #999;border-left-width: 1px ;border-right-width: 1px;float: left;outline: none;color: #333;padding: 0 5%;border-radius:0;}
 			</style>
 		`;
-		el.empty().append(content);
+    el.empty().append(content);
 
-		var _input = el.find('input');
+    let _input = el.find('input');
 
-		_input[0].oninput = function(){
-			this.value = this.value.replace(/\D/g,'');
-			if (this.value<settings.min) {
-				this.value = settings.min;
-			};
-			if (this.value>settings.max) {
-				this.value = settings.max;
-			};
-			this.value = (Number(this.value));
-			settings.change(this.value);
-			settings.inputChange(this.value);
-		};
+    _input[0].oninput = function () {
+      this.value = this.value.replace(/\D/g, '');
+      if (this.value < settings.min) {
+        this.value = settings.min;
+      }
 
-		el.find('.less').click(function(){
-			if (_input.val()>settings.min) {
-				_input.val(Number(_input.val())-1);
-				settings.change(_input.val());
-				settings.lessClick(_input.val());
-			};
-		});
+      if (this.value > settings.max) {
+        this.value = settings.max;
+      }
+      this.value = (Number(this.value));
+      settings.change(this.value);
+      settings.inputChange(this.value);
+    };
 
-		el.find('.plus').click(function(){
-			if (_input.val()<settings.max) {
-				_input.val(Number(_input.val())+1);
-				settings.change(_input.val());
-				settings.plusClick(_input.val());
-			};
-		});
+    el.find('.less').click(function () {
+      if (_input.val() > settings.min) {
+        _input.val(Number(_input.val()) - 1);
+        settings.change(_input.val());
+        settings.lessClick(_input.val());
+      }
+    });
 
-	};
+    el.find('.plus').click(function () {
+      if (_input.val() < settings.max) {
+        _input.val(Number(_input.val()) + 1);
+        settings.change(_input.val());
+        settings.plusClick(_input.val());
+      }
+    });
 
-	$.fn.numberOption = function(options){
+  };
 
-		var self = this;
+  $.fn.numberOption = function (options) {
 
-		var settings = $.extend({},defaults, options);
+    const self = this;
 
-		number_option(self,settings);
+    const settings = $.extend({}, defaults, options);
 
-		return self;
-	};
+    number_option(self, settings);
 
-})(jQuery)
+    return self;
+  };
+
+})(jQuery);
