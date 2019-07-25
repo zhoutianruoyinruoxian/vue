@@ -14,7 +14,7 @@ import list from '../components/page/list.vue'
 import prototypeInheritance from '../components/page/article/prototypeInheritance/prototypeInheritance.vue'
 import clickDelay from '../components/page/article/clickDelay/clickDelay.vue'
 
-import websocket from '../components/page/pluginPage/websocket/server.vue'
+import websocket from '../components/page/websocket.vue'
 
 
 Vue.use(VueRouter)
@@ -29,96 +29,101 @@ Vue.use(VueRouter)
 // 		// component: _path
 // 	}
 // 	pageRoutes.push(obj)
-	
+
 // })
 
 const router = new VueRouter({
 	// mode: 'history',
-	routes: 
-	[
-		{
-			path: "/",
-			name: "home",
-			component: home,
-			meta: {
-				title: '首页',
+	routes:
+		[
+			{
+				path: "/",
+				name: "home",
+				component: home,
+				meta: {
+					title: '首页',
+				}
+			},
+			{
+				path: "/text",
+				name: "text",
+				component: text
+			},
+			{
+				path: "/test",
+				name: "test",
+				component: test
+			},
+			{
+				path: "/numberOption",
+				name: "numberOption",
+				component: numberOption
+			},
+			{
+				path: "/fileUpload",
+				name: "fileUpload",
+				component: fileUpload
+			},
+			{
+				path: "/list",
+				name: "list",
+				component: list
+			},
+			// {
+			// 	path: "/article",
+			// 	name: "article",
+			// 	component: prototypeInheritance,
+			// 	children:[
+			// 		{
+			// 			path:'prototypeInheritance',
+			// 			name: "prototypeInheritance",
+			// 			component: prototypeInheritance,
+			// 		},
+			// 	]
+			// },
+			{
+				path: "/article",
+				name: "article",
+				component: clickDelay,
+			},
+			{
+				path: "/pluginPage",
+				name: "plugin",
+				component: plugin,
+				children: [
+					{
+						path: "numberOption",
+						name: "numberOption",
+						component: numberOption,
+					},
+					{
+						path: "three",
+						name: "three",
+						component: three,
+					},
+					{
+						path: "vr",
+						name: "vr",
+						component: vr,
+					},
+					{
+						path: "websocket",
+						name: "websocket",
+						component: websocket,
+					},
+				]
+			},
+			{
+				path: "/notes",
+				name: "notes",
+				component: plugin,
+			},
+			{
+				path: "/websocket",
+				name: "websocket",
+				component: websocket,
 			}
-		},
-		{
-			path: "/text",
-			name: "text",
-			component: text
-		},
-		{
-			path: "/test",
-			name: "test",
-			component: test
-		},
-		{
-			path: "/numberOption",
-			name: "numberOption",
-			component: numberOption
-		},
-		{
-			path: "/fileUpload",
-			name: "fileUpload",
-			component: fileUpload
-		},
-		{
-			path: "/list",
-			name: "list",
-			component: list
-		},
-		// {
-		// 	path: "/article",
-		// 	name: "article",
-		// 	component: prototypeInheritance,
-		// 	children:[
-		// 		{
-		// 			path:'prototypeInheritance',
-		// 			name: "prototypeInheritance",
-		// 			component: prototypeInheritance,
-		// 		},
-		// 	]
-		// },
-		{
-			path: "/article",
-			name: "article",
-			component: clickDelay,
-		},
-		{
-			path: "/pluginPage",
-			name: "plugin",
-			component: plugin,
-			children:[
-				{
-					path: "numberOption",
-					name: "numberOption",
-					component: numberOption,
-				},
-				{
-					path: "three",
-					name: "three",
-					component: three,
-				},
-				{
-					path: "vr",
-					name: "vr",
-					component: vr,
-				},
-				{
-					path: "websocket",
-					name: "websocket",
-					component: websocket,
-				},
-			]
-		},
-		{
-			path:"/notes",
-			name:"notes",
-			component: plugin,
-		}
-	]
+		]
 })
 
 // router.beforeEach((to, from, next) => {

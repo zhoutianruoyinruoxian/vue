@@ -18,7 +18,7 @@
 			return{
 				
 			}
-		}
+		},
 		mounted(){
 			$('#number').numberOption({
 				name: 'menumber',
